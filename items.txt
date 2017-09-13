@@ -1,0 +1,7 @@
+<p>bottle, 1</p>
+<p>apple, 5</p>
+<p>banana, 2</p>
+<p>orange, 2</p>
+<p>broccoli, 1</p>
+<p>carrot, 1</p>
+EOF
