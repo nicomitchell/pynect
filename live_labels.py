@@ -1,6 +1,8 @@
 #import the necessary modules
-print("importing freenect")
-import freenect
+# print("importing freenect")
+# import freenect
+import sys
+print(sys.path)
 print("importing cv2")
 import cv2
 print("importing numpy")
@@ -10,25 +12,26 @@ import object_detect_demo
 #import label_image
 print("starting...")
 #function to get RGB image from kinect
-def get_video():
-    array,_ = freenect.sync_get_video()
-    array = cv2.cvtColor(array,cv2.COLOR_RGB2BGR)
-    return array
+# def get_video():
+#     array,_ = freenect.sync_get_video()
+#     array = cv2.cvtColor(array,cv2.COLOR_RGB2BGR)
+#     return array
 
+cap = cv2.VideoCapture(0)
 
     
 
-#function to get depth image from kinect
-def get_depth():
-    array,_ = freenect.sync_get_depth()
-    array = array.astype(np.uint8)
-    return array
+# #function to get depth image from kinect
+# def get_depth():
+#     array,_ = freenect.sync_get_depth()
+#     array = array.astype(np.uint8)
+#     return array
 
 
 
 while 1:
     #get a frame from RGB camera
-    frame = get_video()
+    frame = cap.read()
     print("got video")
     #get a frame from depth sensor
     ###depth = get_depth()
@@ -47,4 +50,6 @@ while 1:
     k = cv2.waitKey(5) & 0xFF
     if k == 27:
         break
+
+cap.release()
 cv2.destroyAllWindows()

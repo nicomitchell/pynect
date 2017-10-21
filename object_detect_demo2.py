@@ -24,16 +24,14 @@ from PIL import Image
 
 # This is needed to display the images.
 # This is needed since the notebook is stored in the object_detection folder.
-sys.path.append("..")
-sys.path.append('/Users/max/Documents/models-master/object_detection/') # point to your tensorflow dir
-sys.path.append('/Users/max/Documents/models-master/') # point to your tensorflow dir
-sys.path.append('/Users/max/Documents/models-master/slim ') # point ot your slim dir
+sys.path.append('C:/python36/Lib/site-packages/models') # point to your tensorflow dir
+#sys.path.append('/Users/max/Documents/models-master/') # point to your tensorflow dir
+#sys.path.append('/Users/max/Documents/models-master/slim ') # point ot your slim dir
 
 
 from utils import label_map_util
-
 from utils import visualization_utils as vis_util
-"""
+
 
 # What model to download.
 MODEL_NAME = 'ssd_mobilenet_v1_coco_11_06_2017'
@@ -47,7 +45,7 @@ PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
 PATH_TO_LABELS = 'mscoco_label_map.pbtxt'
 
 NUM_CLASSES = 90
-"""
+
 
 MODEL_NAME = 'ssd_mobilenet_v1_coco_11_06_2017'
 MODEL_FILE = MODEL_NAME + '.tar.gz'
